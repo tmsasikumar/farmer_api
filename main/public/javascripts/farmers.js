@@ -11,6 +11,9 @@ function farmerDetailsRelatedToFEF(requestPrams, res) {
                 responce.farmers[counter++] = details.farmers[farmer];
             }
         }
+        if(responce.farmers.length === 0){
+          res.status(404).end();
+        }
         res.send(responce).end();
     });
 }
@@ -24,7 +27,20 @@ function specificFarmerDetails(requestPrams, res) {
                 responce.farmers[counter++] = details.farmers[farmer];
             }
         }
+        if(responce.farmers.length === 0){
+            res.status(404).end();
+        }
         res.send(responce).end();
+    });
+}
+
+function allFarmers(res) {
+    fs.readFile(FILEPATH, 'utf8', function (err, data) {
+        var details = JSON.parse(data);
+        if(details.farmers.length === 0){
+            res.status(404).end();
+        }
+        res.send(details).end();
     });
 }
 
@@ -62,6 +78,8 @@ module.exports = {
             farmerDetailsRelatedToFEF(requestPrams, res);
         }else if(requestPrams.idProof || requestPrams.aadharCard){
             specificFarmerDetails(requestPrams, res);
+        } else {
+            allFarmers(res)
         }
     }
 };
