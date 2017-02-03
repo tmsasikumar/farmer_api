@@ -1,4 +1,6 @@
 var fs = require("fs");
+var paymentStatus = require("./paymentStatus.js");
+
 var responce = {"farmers": []};
 const FILEPATH = "../resources/farmersDetail.json";
 const USERFILEPATH = "../resources/user.json";
@@ -56,13 +58,14 @@ var farmerPresent = function (name, requestPrams) {
 };
 
 function checkIfUserHAsAccess(details, requestPrams, res, name) {
-    if(isRoleFEF(name, requestPrams.FEF)) {
+    if (isRoleFEF(name, requestPrams.FEF)) {
         details.farmers[details.farmers.length] = requestPrams;
 
         fs.writeFile(FILEPATH, JSON.stringify(details), function (err) {
             if (err) {
                 res.status(500).end();
             }
+            paymentStatus.add(requestPrams.aadharCard);
         });
         res.status(200).end();
     }
@@ -106,7 +109,6 @@ module.exports = {
             }else {
                 checkIfFEFisRegistered(requestPrams, details, res);
             }
-
         });
     },
     getFarmers: function(req, res){

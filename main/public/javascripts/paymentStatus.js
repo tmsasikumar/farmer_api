@@ -16,5 +16,17 @@ module.exports = {
             }
             res.status(404).end();
         });
+    },
+    add: function(aadharCard, res){
+        var requestPrams = {
+            "paymentStatus": "0",
+            "userID": aadharCard
+        };
+        fs.readFile(FILEPATH, 'utf8', function (err, data) {
+            var status = JSON.parse(data);
+                status.payment[status.payment.length] = requestPrams;
+
+                fs.writeFile(FILEPATH, JSON.stringify(status), function (err) {});
+        });
     }
 };
