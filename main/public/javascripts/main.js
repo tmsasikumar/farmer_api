@@ -63,6 +63,14 @@ app.post('/api/addFarmer', function (req, res) {
     });
 });
 
+app.post('/api/getPhoto', function(request, responce){
+   var requestParams = request.body;
+    console.log(requestParams);
+    responce.sendFile("/Users/kvivek/hackthon/farmer_mock/main/public/images/" + requestParams.urlName + ".jpg");
+});
+
+
+
 
 var server = app.listen(8081,  function () {
 
