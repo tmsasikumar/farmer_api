@@ -10,7 +10,7 @@ function login(req, res) {
     fs.readFile("../resources/user.json", 'utf8', function (err, data) {
         var name = JSON.parse(data);
         for (var user in name.users) {
-            if (name.users[user].userid === requestPrams.emailId && name.users[user].password === requestPrams.password) {
+            if (name.users[user].emailId === requestPrams.emailId && name.users[user].password === requestPrams.password) {
                 var responce = {
                     "role": name.users[user].role,
                     "userName": name.users[user].name,
@@ -46,6 +46,7 @@ app.post('/api/register', function (req, res) {
         res.send(responce);
     });
 });
+
 
 var server = app.listen(8081,  function () {
 
