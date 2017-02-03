@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "name": "vivek",
+      "role": "FEF",
+      "password": "password",
+      "userid": "vivek"
+    },
+    {
+      "name": "sashi",
+      "role": "SA",
+      "password": "password",
+      "userid": "sashi"
+    },
+    {
+      "name": "prakash",
+      "role": "CS",
+      "password": "password",
+      "userid": "prakash"
+    }
+  ]
+}
