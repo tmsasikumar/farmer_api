@@ -20,6 +20,10 @@ app.post('/api/addFarmer', function (req, res) {
     farmers.addFarmer(req, res);
 });
 
+app.post('/api/getFarmerDetails', function(req, res){
+    farmers.getFarmers(req, res);
+});
+
 
 app.post('/api/getPhoto', function(request, responce){
    var requestParams = request.body;

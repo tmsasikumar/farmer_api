@@ -1,18 +1,67 @@
 var fs = require("fs");
+var responce = {"farmers": []};
+const FILEPATH = "../resources/farmersDetail.json";
+
+function farmerDetailsRelatedToFEF(requestPrams, res) {
+    fs.readFile(FILEPATH, 'utf8', function (err, data) {
+        var details = JSON.parse(data);
+        var counter = 0;
+        for (var farmer in details.farmers) {
+            if (details.farmers[farmer].FEF === requestPrams.FEFid) {
+                responce.farmers[counter++] = details.farmers[farmer];
+            }
+        }
+        res.send(responce).end();
+    });
+}
+
+function specificFarmerDetails(requestPrams, res) {
+    fs.readFile(FILEPATH, 'utf8', function (err, data) {
+        var details = JSON.parse(data);
+        var counter = 0;
+        for (var farmer in details.farmers) {
+            if (details.farmers[farmer].idProof === requestPrams.idProof || details.farmers[farmer].aadharCard === requestPrams.aadharCard) {
+                responce.farmers[counter++] = details.farmers[farmer];
+            }
+        }
+        res.send(responce).end();
+    });
+}
+
+var farmerPresent = function (name, requestPrams) {
+    for (var farmer in name.farmers) {
+        if (name.farmers[farmer].idProof === requestPrams.idProof || name.farmers[farmer].aadharCard === requestPrams.aadharCard || name.farmers[farmer].landReg === requestPrams.landReg) {
+            return true;
+        }
+    }
+    return false;
+};
 
 module.exports = {
     addFarmer: function (req, res) {
         var requestPrams = req.body;
-        fs.readFile("../resources/farmersDetail.json", 'utf8', function (err, data) {
+        fs.readFile(FILEPATH, 'utf8', function (err, data) {
             var details = JSON.parse(data);
-            details.farmers[details.farmers.length] = requestPrams;
+            if(farmerPresent(details, requestPrams)){
+                res.status(409).end();
+            }else {
+                details.farmers[details.farmers.length] = requestPrams;
 
-            fs.writeFile("../resources/farmersDetail.json", JSON.stringify(details),  function(err) {
-                if (err) {
-                    res.status(500).end();
-                }
-            });
-            res.status(200).end();
+                fs.writeFile(FILEPATH, JSON.stringify(details), function (err) {
+                    if (err) {
+                        res.status(500).end();
+                    }
+                });
+                res.status(200).end();
+            }
         });
+    },
+    getFarmers: function(req, res){
+        var requestPrams = req.body;
+        if(requestPrams.FEFid){
+            farmerDetailsRelatedToFEF(requestPrams, res);
+        }else if(requestPrams.idProof || requestPrams.aadharCard){
+            specificFarmerDetails(requestPrams, res);
+        }
     }
 };
