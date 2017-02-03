@@ -38,8 +38,6 @@ app.post('/api/getPhoto', function(request, responce){
 });
 
 
-
-
 var server = app.listen(8081,  function () {
 
     var host = server.address().address;
