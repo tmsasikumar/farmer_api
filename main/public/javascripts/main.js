@@ -30,6 +30,9 @@ app.post('/api/getPaymentStatus', function(req, res){
     paymentStatus.getStatus(req, res);
 });
 
+app.post('/api/updateFarmer', function(req, res){
+   farmers.update(req, res);
+});
 
 app.post('/api/getPhoto', function(request, responce){
    var requestParams = request.body;

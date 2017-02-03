@@ -120,5 +120,26 @@ module.exports = {
         } else {
             allFarmers(res)
         }
+    },
+    update: function (req, res) {
+        var requestPrams = req.body;
+        fs.readFile(FILEPATH, 'utf8', function (err, data) {
+            var details = JSON.parse(data);
+            for (var farmer in details.farmers) {
+                if (details.farmers[farmer].aadharCard === requestPrams.aadharCard) {
+                    for (var counter in Object.keys(requestPrams)) {
+                        var key = Object.keys(requestPrams)[counter];
+                        if (!(key === "aadharCard" || key === "idProof"))
+                            details.farmers[farmer][key] = requestPrams[key];
+                    }
+                }
+            }
+            fs.writeFile(FILEPATH, JSON.stringify(details), function (err) {
+                if (err) {
+                    res.status(500).end();
+                }
+                res.status(200).end();
+            });
+        });
     }
 };
