@@ -33,7 +33,6 @@ app.post('/api/register', function (req, res) {
     fs.readFile("../resources/user.json", 'utf8', function (err, data) {
         var name = JSON.parse(data);
         name.users[name.users.length] = requestPrams;
-        console.log(name);
 
         fs.writeFile("../resources/user.json", JSON.stringify(name),  function(err) {
             if (err) {
@@ -46,6 +45,21 @@ app.post('/api/register', function (req, res) {
             "emailId": requestPrams.emailId
         };
         res.send(responce);
+    });
+});
+
+app.post('/api/addFarmer', function (req, res) {
+    var requestPrams = req.body;
+    fs.readFile("../resources/farmersDetail.json", 'utf8', function (err, data) {
+        var details = JSON.parse(data);
+        details.farmers[details.farmers.length] = requestPrams;
+
+        fs.writeFile("../resources/farmersDetail.json", JSON.stringify(details),  function(err) {
+            if (err) {
+                res.status(500).end();
+            }
+        });
+        res.status(200).end();
     });
 });
 

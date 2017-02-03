@@ -23,6 +23,14 @@
       "emailId": "prakash",
       "phone": "value",
       "address": "value"
+    },
+    {
+      "name": "sandeep",
+      "role": "FEF",
+      "password": "password",
+      "emailId": "sandeep",
+      "phone": "value",
+      "address": "value"
     }
   ]
 }
