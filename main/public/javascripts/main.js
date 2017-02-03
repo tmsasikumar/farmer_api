@@ -22,11 +22,11 @@ function login(req, res) {
         res.status(404).end();
     });
 }
-app.post('/login', function (req, res) {
+app.post('/api/login', function (req, res) {
     login(req, res);
 });
 
-app.post('/register', function (req, res) {
+app.post('/api/register', function (req, res) {
     var requestPrams = req.body;
     fs.readFile("../resources/user.json", 'utf8', function (err, data) {
         var name = JSON.parse(data);
@@ -46,6 +46,7 @@ app.post('/register', function (req, res) {
         res.send(responce);
     });
 });
+
 var server = app.listen(8081,  function () {
 
     var host = server.address().address;
