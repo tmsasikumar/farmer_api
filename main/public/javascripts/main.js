@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 var fs = require("fs");
+var cors = require("cors");
 var bodyParser = require('body-parser');
 
+app.use(cors());
 app.use(bodyParser.json());
 
 function login(req, res) {
@@ -11,12 +13,12 @@ function login(req, res) {
         var name = JSON.parse(data);
         for (var user in name.users) {
             if (name.users[user].emailId === requestPrams.emailId && name.users[user].password === requestPrams.password) {
-                var responce = {
+                var response = {
                     "role": name.users[user].role,
                     "userName": name.users[user].name,
                     "emailId": name.users[user].emailId
                 };
-                res.send(responce);
+                res.send(response);
             }
         }
         res.status(404).end();
