@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
-app.post('/login', function (req, res) {
+function login(req, res) {
     var requestPrams = req.body;
     fs.readFile("../resources/user.json", 'utf8', function (err, data) {
         var name = JSON.parse(data);
@@ -13,12 +13,37 @@ app.post('/login', function (req, res) {
             if (name.users[user].userid === requestPrams.emailId && name.users[user].password === requestPrams.password) {
                 var responce = {
                     "role": name.users[user].role,
-                    "userName": name.users[user].name
+                    "userName": name.users[user].name,
+                    "emailId": name.users[user].emailId
                 };
                 res.send(responce);
             }
         }
         res.status(404).end();
+    });
+}
+app.post('/login', function (req, res) {
+    login(req, res);
+});
+
+app.post('/register', function (req, res) {
+    var requestPrams = req.body;
+    fs.readFile("../resources/user.json", 'utf8', function (err, data) {
+        var name = JSON.parse(data);
+        name.users[name.users.length] = requestPrams;
+        console.log(name);
+
+        fs.writeFile("../resources/user.json", JSON.stringify(name),  function(err) {
+            if (err) {
+                res.status(500).end();
+            }
+        });
+        var responce = {
+            "role": requestPrams.role,
+            "userName": requestPrams.name,
+            "emailId": requestPrams.emailId
+        };
+        res.send(responce);
     });
 });
 var server = app.listen(8081,  function () {

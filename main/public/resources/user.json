@@ -4,19 +4,25 @@
       "name": "vivek",
       "role": "FEF",
       "password": "password",
-      "userid": "vivek"
+      "emailId": "vivek",
+      "phone": "value",
+      "address": "value"
     },
     {
-      "name": "sashi",
+      "name": "sasi",
       "role": "SA",
       "password": "password",
-      "userid": "sashi"
+      "emailId": "sasi",
+      "phone": "value",
+      "address": "value"
     },
     {
       "name": "prakash",
       "role": "CS",
       "password": "password",
-      "userid": "prakash"
+      "emailId": "prakash",
+      "phone": "value",
+      "address": "value"
     }
   ]
 }
