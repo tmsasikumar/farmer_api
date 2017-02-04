@@ -46,7 +46,7 @@ app.post('/api/pay', function(req, res){
 app.post('/api/getPhoto', function(request, responce){
    var requestParams = request.body;
     console.log(requestParams);
-    responce.sendFile("/Users/kvivek/hackthon/farmer_mock/main/public/images/" + requestParams.urlName + ".jpg");
+    responce.sendFile(__dirname + "/images/" + requestParams.urlName + ".jpg");
 });
 
 
