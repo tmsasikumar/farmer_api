@@ -1,12 +1,1 @@
-{
-  "payment": [
-    {
-      "paymentStatus": "0",
-      "userID": "23912330481"
-    },
-    {
-      "paymentStatus": "1",
-      "userID": "23912330480"
-    }
-  ]
-}
+{"payment":[{"paymentStatus":"0","userID":"23912330481"},{"paymentStatus":"1","userID":"23912330480"},{"paymentStatus":"0","farmerid":"12345"}]}
