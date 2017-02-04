@@ -18,7 +18,7 @@ app.post('/api/register', function (req, res) {
     user.register(req, res);
 });
 
-app.post('/api/addFarmer', function (req, res) {
+app.post('/api/farmer', function (req, res) {
     farmers.addFarmer(req, res);
 });
 
