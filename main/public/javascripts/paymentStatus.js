@@ -3,22 +3,20 @@ const FILEPATH = "../resources/status.json";
 
 module.exports = {
     getStatus: function (req, res) {
+        var response = {
+            "paymentStatus": "0"
+        };
         var requestPrams = req.body.farmerId;
         fs.readFile(FILEPATH, 'utf8', function (err, data) {
             var statuses = JSON.parse(data);
             for (var status in statuses.payment) {
-                if (statuses.payment[status].userID === requestPrams) {
-                    var response = {
-                        "status": statuses.payment[status].paymentStatus
+                if (statuses.payment[status].farmerId === requestPrams) {
+                    response = {
+                        "paymentStatus": statuses.payment[status].paymentStatus
                     };
-                    res.send(response);
                 }
             }
-            var response = {
-                "paymentStatus": "0",
-                "farmerid": requestPrams
-            };
-            res.send(response);
+            res.send(response).end();
         });
     },
     add: function(farmerid, res){
