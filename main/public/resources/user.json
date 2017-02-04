@@ -31,6 +31,14 @@
       "emailId": "sandeep",
       "phoneNumber": "value",
       "address": "value"
+    },
+     {
+      "name": "demo user",
+      "role": "FEF",
+      "password": "a",
+      "emailId": "a@a.com",
+      "phone": "value",
+      "address": "value"
     }
   ]
 }
