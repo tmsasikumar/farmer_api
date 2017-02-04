@@ -5,7 +5,7 @@
       "role": "FEF",
       "password": "password",
       "emailId": "vivek",
-      "phone": "value",
+      "phoneNumber": "value",
       "address": "value"
     },
     {
@@ -13,7 +13,7 @@
       "role": "SA",
       "password": "password",
       "emailId": "sasi",
-      "phone": "value",
+      "phoneNumber": "value",
       "address": "value"
     },
     {
@@ -21,7 +21,7 @@
       "role": "CS",
       "password": "password",
       "emailId": "prakash",
-      "phone": "value",
+      "phoneNumber": "value",
       "address": "value"
     },
     {
@@ -29,7 +29,7 @@
       "role": "FEF",
       "password": "password",
       "emailId": "sandeep",
-      "phone": "value",
+      "phoneNumber": "value",
       "address": "value"
     }
   ]
