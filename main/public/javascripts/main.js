@@ -4,6 +4,7 @@ var cors = require("cors");
 var bodyParser = require('body-parser');
 var user = require("./user.js");
 var farmers = require("./farmers.js");
+var faq = require("./faq.js")
 var paymentStatus = require("./paymentStatus.js");
 
 
@@ -24,6 +25,10 @@ app.post('/api/farmer', function (req, res) {
 
 app.get('/api/farmer', function(req, res){
     farmers.getFarmers(req, res);
+});
+
+app.get('/api/faq', function (req, res) {
+    faq.faqs(req, res);
 });
 
 app.post('/api/getPaymentStatus', function(req, res){
