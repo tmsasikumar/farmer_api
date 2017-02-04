@@ -91,7 +91,7 @@ var userPresent = function (name, emailId) {
 
 var isRoleFEF = function (name, emailId) {
     for (var user in name.users) {
-        if (name.users[user].emailId === emailId && name.users[user].role === "FEF") {
+        if (name.users[user].emailId === emailId && (name.users[user].role === "FEF" || name.users[user].role === "SA")) {
             return true;
         }
     }
@@ -122,7 +122,6 @@ module.exports = {
     getFarmers: function(req, res){
         var url_parts = url.parse(req.url, true);
         var query = url_parts.query;
-        //query = query.toString();
         var requestPrams = req.query;
         if(requestPrams.FEFid || requestPrams.userId){
             farmerDetailsRelatedToFEF(requestPrams, res);
