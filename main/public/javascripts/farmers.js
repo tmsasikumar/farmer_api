@@ -52,7 +52,7 @@ function allFarmers(res) {
         if(details.farmers.length === 0){
             res.status(404).end();
         }
-        res.send(details).end();
+        res.send(details.farmers).end();
     });
 }
 
