@@ -1,6 +1,7 @@
 {
   "farmers": [
     {
+      "farmerId": "asdf",
       "name": "vivek",
       "idProof": "sdshadgjhsf",
       "photo": "",
@@ -12,10 +13,12 @@
       "cropType": "",
       "crop": "wheat",
       "FEF": "vivek",
+      "donor": "vivek",
       "cultivationDate": "12/feb/2017",
       "harvestDate": "15/feb/2017"
     },
     {
+      "farmerId": "1234",
       "name": "prakash",
       "idProof": "sdshadgjhf",
       "photo": "prakash",
@@ -26,11 +29,13 @@
       "landArea": "2000",
       "cropType": "",
       "FEF": "sandeep",
+      "donor": "prakash",
       "crop": "rice",
       "cultivationDate": "12/dec/2016",
       "harvestDate": "15/feb/2017"
     },
     {
+      "farmerId": "wqer",
       "name": "sandeep",
       "idProof": "sdshadjhsf",
       "photo": "",
@@ -41,6 +46,7 @@
       "landArea": "2004",
       "cropType": "",
       "FEF": "vivek",
+      "donor": "sasi",
       "crop": "sarsoo",
       "cultivationDate": "12/jan/2017",
       "harvestDate": "15/feb/2017"

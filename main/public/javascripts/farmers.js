@@ -1,5 +1,6 @@
 var fs = require("fs");
 var paymentStatus = require("./paymentStatus.js");
+var url = require('url');
 
 var responce = {"farmers": []};
 const FILEPATH = "../resources/farmersDetail.json";
@@ -10,9 +11,17 @@ function farmerDetailsRelatedToFEF(requestPrams, res) {
     fs.readFile(FILEPATH, 'utf8', function (err, data) {
         var details = JSON.parse(data);
         var counter = 0;
-        for (var farmer in details.farmers) {
-            if (details.farmers[farmer].FEF === requestPrams.FEFid) {
-                responce.farmers[counter++] = details.farmers[farmer];
+        if(Object.keys(requestPrams)[0] === "FEFid") {
+            for (var farmer in details.farmers) {
+                if (details.farmers[farmer].FEF === requestPrams.FEFid) {
+                    responce.farmers[counter++] = details.farmers[farmer];
+                }
+            }
+        }else{
+            for (var farmer in details.farmers) {
+                if (details.farmers[farmer].doner === requestPrams.userId) {
+                    responce.farmers[counter++] = details.farmers[farmer];
+                }
             }
         }
         if(responce.farmers.length === 0){
@@ -112,8 +121,11 @@ module.exports = {
         });
     },
     getFarmers: function(req, res){
-        var requestPrams = req.body;
-        if(requestPrams.FEFid){
+        var url_parts = url.parse(req.url, true);
+        var query = url_parts.query;
+        //query = query.toString();
+        var requestPrams = req.query;
+        if(requestPrams.FEFid || requestPrams.userId){
             farmerDetailsRelatedToFEF(requestPrams, res);
         }else if(requestPrams.idProof || requestPrams.aadharCard){
             specificFarmerDetails(requestPrams, res);
