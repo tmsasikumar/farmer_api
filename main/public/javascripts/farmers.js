@@ -36,14 +36,13 @@ function specificFarmerDetails(requestPrams, res) {
         var details = JSON.parse(data);
         var counter = 0;
         for (var farmer in details.farmers) {
-            if (details.farmers[farmer].idProof === requestPrams.idProof || details.farmers[farmer].aadharCard === requestPrams.aadharCard) {
-                responce.farmers[counter++] = details.farmers[farmer];
+            if (details.farmers[farmer].farmerId === requestPrams.farmerId) {
+                res.send(details.farmers[farmer]).end();
             }
         }
         if(responce.farmers.length === 0){
             res.status(404).end();
         }
-        res.send(responce).end();
     });
 }
 
@@ -74,7 +73,7 @@ function checkIfUserHAsAccess(details, requestPrams, res, name) {
             if (err) {
                 res.status(500).end();
             }
-            paymentStatus.add(requestPrams.aadharCard);
+            paymentStatus.add(requestPrams.farmerID);
         });
         res.status(200).end();
     }
@@ -127,7 +126,7 @@ module.exports = {
         var requestPrams = req.query;
         if(requestPrams.FEFid || requestPrams.userId){
             farmerDetailsRelatedToFEF(requestPrams, res);
-        }else if(requestPrams.idProof || requestPrams.aadharCard){
+        }else if(requestPrams.farmerId){
             specificFarmerDetails(requestPrams, res);
         } else {
             allFarmers(res)
@@ -138,11 +137,31 @@ module.exports = {
         fs.readFile(FILEPATH, 'utf8', function (err, data) {
             var details = JSON.parse(data);
             for (var farmer in details.farmers) {
-                if (details.farmers[farmer].aadharCard === requestPrams.aadharCard) {
+                if (details.farmers[farmer].farmerId === requestPrams.farmerId) {
                     for (var counter in Object.keys(requestPrams)) {
                         var key = Object.keys(requestPrams)[counter];
-                        if (!(key === "aadharCard" || key === "idProof"))
+                        if (!(key === "aadharCard" || key === "idProof" || key === "farmerId"))
                             details.farmers[farmer][key] = requestPrams[key];
+                    }
+                }
+            }
+            fs.writeFile(FILEPATH, JSON.stringify(details), function (err) {
+                if (err) {
+                    res.status(500).end();
+                }
+                res.status(200).end();
+            });
+        });
+    },
+    primium: function (req, res) {
+        var requestPrams = req.body;
+        fs.readFile(FILEPATH, 'utf8', function (err, data) {
+            var details = JSON.parse(data);
+            for (var farmer in details.farmers) {
+                if (details.farmers[farmer].farmerId === requestPrams.farmerId) {
+                    for (var counter in Object.keys(requestPrams)) {
+                        details.farmers[farmer].donor = requestPrams.cropSaverId;
+                        paymentStatus.update(requestPrams.farmerId);
                     }
                 }
             }

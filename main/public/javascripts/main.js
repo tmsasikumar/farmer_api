@@ -34,6 +34,10 @@ app.post('/api/updateFarmer', function(req, res){
    farmers.update(req, res);
 });
 
+app.post('/api/pay', function(req, res){
+   farmers.primium(req, res);
+});
+
 app.post('/api/getPhoto', function(request, responce){
    var requestParams = request.body;
     console.log(requestParams);
