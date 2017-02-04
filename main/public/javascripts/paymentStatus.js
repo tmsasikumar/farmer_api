@@ -42,7 +42,7 @@ module.exports = {
             var statuses = JSON.parse(data);
             var farmerPresent = false;
             for (var status in statuses.payment) {
-                if (statuses.payment[status].farmerID === farmerid) {
+                if (statuses.payment[status].farmerId === farmerid) {
                     farmerPresent = true;
                     statuses.payment[status].paymentStatus = "1";
                 }

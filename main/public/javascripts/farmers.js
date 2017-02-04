@@ -58,7 +58,7 @@ function allFarmers(res) {
 
 var farmerPresent = function (name, requestPrams) {
     for (var farmer in name.farmers) {
-        if (name.farmers[farmer].idProof === requestPrams.idProof || name.farmers[farmer].aadharCard === requestPrams.aadharCard || name.farmers[farmer].landReg === requestPrams.landReg) {
+        if (name.farmers[farmer].farmerId === requestPrams.farmerId) {
             return true;
         }
     }
@@ -66,32 +66,32 @@ var farmerPresent = function (name, requestPrams) {
 };
 
 function checkIfUserHAsAccess(details, requestPrams, res, name) {
-    if (isRoleFEF(name, requestPrams.FEF)) {
+    if (isRoleFEF(name, requestPrams)) {
         details.farmers[details.farmers.length] = requestPrams;
 
         fs.writeFile(FILEPATH, JSON.stringify(details), function (err) {
             if (err) {
                 res.status(500).end();
             }
-            paymentStatus.add(requestPrams.farmerID);
+            paymentStatus.add(requestPrams.farmerId);
         });
         res.status(200).end();
     }
     res.status(401).end();
 }
 
-var userPresent = function (name, emailId) {
+var userPresent = function (name, requestPrams) {
     for (var user in name.users) {
-        if (name.users[user].emailId === emailId) {
+        if (name.users[user].emailId === requestPrams.FEF) {
             return true;
         }
     }
     return false;
 };
 
-var isRoleFEF = function (name, emailId) {
+var isRoleFEF = function (name, requestPrams) {
     for (var user in name.users) {
-        if (name.users[user].emailId === emailId && (name.users[user].role === "FEF" || name.users[user].role === "SA")) {
+        if ((name.users[user].emailId === requestPrams.FEF || name.users[user].emailId === requestPrams.FEF) && (name.users[user].role === "FEF" || name.users[user].role === "SA")) {
             return true;
         }
     }
@@ -101,7 +101,7 @@ var isRoleFEF = function (name, emailId) {
 function checkIfFEFisRegistered(requestPrams, details, res) {
     fs.readFile(USERFILEPATH, 'utf8', function (err, data) {
         var name = JSON.parse(data);
-        if (userPresent(name, requestPrams.FEF)) {
+        if (userPresent(name, requestPrams)) {
             checkIfUserHAsAccess(details, requestPrams, res, name);
         }
         res.status(400).end();
