@@ -75,7 +75,7 @@ function checkIfUserHAsAccess(details, requestPrams, res, name) {
             }
             paymentStatus.add(requestPrams.farmerId);
         });
-        res.status(200).end();
+        res.send(requestPrams).end();
     }
     res.status(401).end();
 }
