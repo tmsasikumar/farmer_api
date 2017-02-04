@@ -13,6 +13,8 @@
       "cropType": "",
       "crop": "wheat",
       "FEF": "vivek",
+      "cropRisk": "50%",
+      "cropPrimeum": "1111",
       "donor": "vivek",
       "cultivationDate": "12/feb/2017",
       "harvestDate": "15/feb/2017"
@@ -30,6 +32,8 @@
       "cropType": "",
       "FEF": "sandeep",
       "donor": "prakash",
+      "cropPrimeum": "2222",
+      "cropRisk": "40%",
       "crop": "rice",
       "cultivationDate": "12/dec/2016",
       "harvestDate": "15/feb/2017"
@@ -46,6 +50,8 @@
       "landArea": "2004",
       "cropType": "",
       "FEF": "vivek",
+      "cropPrimeum": "4444",
+      "cropRisk": "20%",
       "donor": "sasi",
       "crop": "sarsoo",
       "cultivationDate": "12/jan/2017",
