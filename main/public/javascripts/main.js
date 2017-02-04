@@ -49,6 +49,12 @@ app.post('/api/getPhoto', function(request, responce){
     responce.sendFile(__dirname + "/images/" + requestParams.urlName + ".jpg");
 });
 
+app.get('/api/getPhoto', function(request, responce){
+   var requestParams = request.query;
+   // console.log(requestParams);
+    responce.sendFile(__dirname + "/images/" + requestParams.urlName + ".jpg");
+});
+
 
 var server = app.listen(8081,  function () {
 
