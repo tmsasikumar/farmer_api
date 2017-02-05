@@ -123,7 +123,7 @@ module.exports = {
         var url_parts = url.parse(req.url, true);
         var query = url_parts.query;
         var requestPrams = req.query;
-        if(requestPrams.FEFid || requestPrams.userId){
+        if(requestPrams.FEFId || requestPrams.userId){
             farmerDetailsRelatedToFEF(requestPrams, res);
         }else if(requestPrams.farmerId){
             specificFarmerDetails(requestPrams, res);
