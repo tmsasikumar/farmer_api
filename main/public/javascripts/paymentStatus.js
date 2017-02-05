@@ -46,11 +46,11 @@ module.exports = {
                 }
             }
             if(!farmerPresent){
-                var requestPrams = {
+                var requestPramsForNonStatusUser = {
                     "paymentStatus": "1",
                     "farmerid": farmerid
                 };
-                statuses.payment[statuses.payment.length] = requestPrams;
+                statuses.payment[statuses.payment.length] = requestPramsForNonStatusUser;
             }
 
             fs.writeFile(FILEPATH, JSON.stringify(statuses), function (err) {});
