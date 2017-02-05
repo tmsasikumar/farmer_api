@@ -4,7 +4,7 @@
       "name": "vivek",
       "role": "FEF",
       "password": "password",
-      "emailId": "vivek",
+      "emailId": "vivek@a.com",
       "phoneNumber": "value",
       "address": "value"
     },
@@ -20,7 +20,7 @@
       "name": "prakash",
       "role": "CS",
       "password": "password",
-      "emailId": "prakash",
+      "emailId": "prakash@a.com",
       "phoneNumber": "value",
       "address": "value"
     },
