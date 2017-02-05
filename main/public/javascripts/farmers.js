@@ -11,9 +11,9 @@ function farmerDetailsRelatedToFEF(requestPrams, res) {
     fs.readFile(FILEPATH, 'utf8', function (err, data) {
         var details = JSON.parse(data);
         var counter = 0;
-        if(Object.keys(requestPrams)[0] === "FEFid") {
+        if(Object.keys(requestPrams)[0] === "FEFId") {
             for (var farmer in details.farmers) {
-                if (details.farmers[farmer].FEF === requestPrams.FEFid) {
+                if (details.farmers[farmer].FEF === requestPrams.FEFId) {
                     responce.farmers[counter++] = details.farmers[farmer];
                 }
             }
@@ -27,7 +27,7 @@ function farmerDetailsRelatedToFEF(requestPrams, res) {
         if(responce.farmers.length === 0){
           res.status(404).end();
         }
-        res.send(responce).end();
+        res.send(responce.farmers).end();
     });
 }
 
