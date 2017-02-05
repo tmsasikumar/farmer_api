@@ -38,6 +38,11 @@ function specificFarmerDetails(requestPrams, res) {
         var counter = 0;
         for (var farmer in details.farmers) {
             if (details.farmers[farmer].farmerId === requestPrams.farmerId) {
+                if(!details.farmers[farmer].crop){
+                    details.farmers[farmer].crop = "rice";
+                }if(!details.farmers[farmer].landPhoto){
+                    details.farmers[farmer].landPhoto = "land2"
+                }
                 res.send(details.farmers[farmer]).end();
             }
         }
