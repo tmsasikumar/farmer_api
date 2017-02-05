@@ -26,8 +26,9 @@ function farmerDetailsRelatedToFEF(requestPrams, res) {
         }
         if(responce.farmers.length === 0){
           res.status(404).end();
+        }else {
+            res.send(responce.farmers).end();
         }
-        res.send(responce.farmers).end();
     });
 }
 
@@ -159,7 +160,7 @@ module.exports = {
             for (var farmer in details.farmers) {
                 if (details.farmers[farmer].farmerId === requestPrams.farmerId) {
                     for (var counter in Object.keys(requestPrams)) {
-                        details.farmers[farmer].donor = requestPrams.cropSaverId;
+                        details.farmers[farmer].donor = requestPrams.emailId;
                         paymentStatus.update(requestPrams.farmerId, res);
                     }
                 }
@@ -168,7 +169,11 @@ module.exports = {
                 if (err) {
                     res.status(500).end();
                 }
-                res.status(200).end();
+                var requestPrams = {
+                    "paymentStatus": "1",
+                    "farmerid": farmerid
+                };
+                res.send(requestPrams).end();
             });
         });
     }
