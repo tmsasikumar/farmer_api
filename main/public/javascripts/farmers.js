@@ -159,10 +159,8 @@ module.exports = {
             var details = JSON.parse(data);
             for (var farmer in details.farmers) {
                 if (details.farmers[farmer].farmerId === requestPrams.farmerId) {
-                    for (var counter in Object.keys(requestPrams)) {
                         details.farmers[farmer].donor = requestPrams.emailId;
                         paymentStatus.update(requestPrams.farmerId, res);
-                    }
                 }
             }
             fs.writeFile(FILEPATH, JSON.stringify(details), function (err) {

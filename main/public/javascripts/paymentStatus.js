@@ -31,16 +31,16 @@ module.exports = {
                 fs.writeFile(FILEPATH, JSON.stringify(status), function (err) {});
         });
     },
-    update: function(farmerid, res){
+    update: function(farmerId, res){
         var requestPrams = {
             "paymentStatus": "1",
-            "farmerid": farmerid
+            "farmerId": farmerId
         };
         fs.readFile(FILEPATH, 'utf8', function (err, data) {
             var statuses = JSON.parse(data);
             var farmerPresent = false;
             for (var status in statuses.payment) {
-                if (statuses.payment[status].farmerId === farmerid) {
+                if (statuses.payment[status].farmerId === farmerId) {
                     farmerPresent = true;
                     statuses.payment[status].paymentStatus = "1";
                 }
@@ -48,7 +48,7 @@ module.exports = {
             if(!farmerPresent){
                 var requestPramsForNonStatusUser = {
                     "paymentStatus": "1",
-                    "farmerid": farmerid
+                    "farmerId": farmerId
                 };
                 statuses.payment[statuses.payment.length] = requestPramsForNonStatusUser;
             }
