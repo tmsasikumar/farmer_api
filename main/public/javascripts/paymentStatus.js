@@ -31,7 +31,7 @@ module.exports = {
                 fs.writeFile(FILEPATH, JSON.stringify(status), function (err) {});
         });
     },
-    update: function(farmerid){
+    update: function(farmerid, res){
         var requestPrams = {
             "paymentStatus": "1",
             "farmerid": farmerid
@@ -50,10 +50,12 @@ module.exports = {
                     "paymentStatus": "1",
                     "farmerid": farmerid
                 };
-                statuses.payment[status.payment.length] = requestPrams;
+                statuses.payment[statuses.payment.length] = requestPrams;
             }
 
             fs.writeFile(FILEPATH, JSON.stringify(statuses), function (err) {});
+
+            res.send(requestPrams).end();
         });
     }
 };

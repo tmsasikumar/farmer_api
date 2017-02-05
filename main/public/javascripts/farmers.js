@@ -160,7 +160,7 @@ module.exports = {
                 if (details.farmers[farmer].farmerId === requestPrams.farmerId) {
                     for (var counter in Object.keys(requestPrams)) {
                         details.farmers[farmer].donor = requestPrams.cropSaverId;
-                        paymentStatus.update(requestPrams.farmerId);
+                        paymentStatus.update(requestPrams.farmerId, res);
                     }
                 }
             }
