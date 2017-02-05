@@ -19,7 +19,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "1234",
-    "name": "prakash",
+    "name": "Pallav Navdeep",
     "idProof": "sdshadgjhf",
     "photo": "prakash",
     "aadharCard": "23912330480",
@@ -37,7 +37,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "wqer",
-    "name": "sandeep",
+    "name": "Akshay Dev",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -48,14 +48,14 @@
     "cropType": "Horti",
     "FEF": "vivek@a.com",
     "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropRisk": "medium",
     "donor": "sasi",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "qwerd",
-    "name": "sandeep",
+    "name": "Anil Mohinder",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -66,13 +66,13 @@
     "cropType": "Horti",
     "FEF": "vivek@a.com",
     "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropRisk": "medium",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "xxxx",
-    "name": "sandeep",
+    "name": "Vishnu Kumaran",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -83,14 +83,14 @@
     "cropType": "Horti",
     "FEF": "vivek",
     "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropRisk": "medium",
     "donor": "prakash@a.com",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "1111",
-    "name": "sandeep",
+    "name": "Anuj Prabhu",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -101,14 +101,14 @@
     "cropType": "Horti",
     "FEF": "vivek",
     "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropRisk": "medium",
     "donor": "prakash@a.com",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "3333",
-    "name": "sandeep",
+    "name": "Arabinda Ajith",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -126,7 +126,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "5555",
-    "name": "sandeep",
+    "name": "Surya Abhilash",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -137,14 +137,14 @@
     "cropType": "Horti",
     "FEF": "vivek",
     "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropRisk": "high",
     "donor": "prakash@a.com",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "6666",
-    "name": "sandeep",
+    "name": "Jayanta Sudarshan",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -154,15 +154,15 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropPremium": "400",
+    "cropRisk": "high",
     "donor": "sasi",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "9999",
-    "name": "sandeep",
+    "name": "Vijaya Sukhbir",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -172,15 +172,15 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropPremium": "400",
+    "cropRisk": "high",
     "donor": "sasi",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "0000",
-    "name": "sandeep",
+    "name": "Dilip Shahrukh",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -190,15 +190,15 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropPremium": "400",
+    "cropRisk": "high",
     "donor": "sasi",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "111145",
-    "name": "sandeep",
+    "name": "Arabinda Jaidev",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -208,15 +208,15 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
-    "cropRisk": "low",
+    "cropPremium": "400",
+    "cropRisk": "high",
     "donor": "sasi",
     "crop": "rice",
     "cultivationDate": "12/jan/2017",
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "esdgdgdf",
-    "name": "sandeep",
+    "name": "Ratna Inderjit",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -226,7 +226,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "400",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "rice",
@@ -234,7 +234,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "kakala",
-    "name": "sandeep",
+    "name": "Parminder Rajender",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -244,7 +244,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "400",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "rice",
@@ -252,7 +252,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "kmnh",
-    "name": "sandeep",
+    "name": "Brijesh Gotam",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -262,7 +262,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "200",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "rice",
@@ -270,7 +270,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "rlrlr",
-    "name": "sandeep",
+    "name": "Rakesh Dhaval",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -280,7 +280,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "200",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "wheat",
@@ -288,7 +288,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "12121323",
-    "name": "sandeep",
+    "name": "Prakash Ramesh",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -298,7 +298,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "200",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "wheat",
@@ -306,7 +306,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "xassdfds",
-    "name": "sandeep",
+    "name": "Sri Surendra",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -316,7 +316,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "501",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "wheat",
@@ -324,7 +324,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "sdsfdfsdfdsfdsf",
-    "name": "sandeep",
+    "name": "Chiranjivi Sarvesh",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -334,7 +334,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "501",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "wheat",
@@ -342,7 +342,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "zxcc",
-    "name": "sandeep",
+    "name": "Vipin Dushyant",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -352,7 +352,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "501",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "wheat",
@@ -360,7 +360,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "qwqeweere",
-    "name": "sandeep",
+    "name": "Mayur Vijay",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -370,7 +370,7 @@
     "landArea": "2004",
     "cropType": "Horti",
     "FEF": "vivek",
-    "cropPremium": "4444",
+    "cropPremium": "501",
     "cropRisk": "low",
     "donor": "sasi",
     "crop": "wheat",
@@ -378,7 +378,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "33333",
-    "name": "sandeep",
+    "name": "Aditya Prabodh",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -396,7 +396,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "33335",
-    "name": "sandeep",
+    "name": "Pravin Agni",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -414,7 +414,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "33336",
-    "name": "sandeep",
+    "name": "Ravindra Sanjay",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -432,7 +432,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "33337",
-    "name": "sandeep",
+    "name": "Krishna Jayesh",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
@@ -450,7 +450,7 @@
     "harvestDate": "15/feb/2017"
   }, {
     "farmerId": "44447",
-    "name": "sandeep",
+    "name": "Rajiv Pratap",
     "idProof": "sdshadjhsf",
     "photo": "",
     "aadharCard": "23912330482",
