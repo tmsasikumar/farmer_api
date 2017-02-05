@@ -169,11 +169,7 @@ module.exports = {
                 if (err) {
                     res.status(500).end();
                 }
-                var requestPrams = {
-                    "paymentStatus": "1",
-                    "farmerid": farmerid
-                };
-                res.send(requestPrams).end();
+                res.status(200).end()
             });
         });
     }
