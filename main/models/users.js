@@ -15,7 +15,8 @@ module.exports = function(sequelize, DataTypes) {
         },
         emailId: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            primaryKey: true
         },
         phoneNumber: {
             type: DataTypes.STRING,

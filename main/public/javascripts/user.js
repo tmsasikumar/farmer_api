@@ -30,7 +30,6 @@ module.exports = {
         });
     },
     register: function (req, res) {
-        console.log(req.body);
         models.Users.create({
             name: req.body.name,
             role: req.body.role,
