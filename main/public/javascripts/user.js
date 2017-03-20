@@ -14,19 +14,25 @@ var userPresent = function (name, requestPrams) {
 module.exports = {
     login: function (req, res) {
         var requestPrams = req.body;
-        fs.readFile(FILEPATH, 'utf8', function (err, data) {
-            var name = JSON.parse(data);
-            for (var user in name.users) {
-                if (name.users[user].emailId === requestPrams.emailId && name.users[user].password === requestPrams.password) {
-                    var response = {
-                        "role": name.users[user].role,
-                        "userName": name.users[user].name,
-                        "emailId": name.users[user].emailId
-                    };
-                    res.send(response);
-                }
+        models.users.findOne({
+            where: {
+                emailId: requestPrams.emailId,
+                password: requestPrams.password
             }
-            res.status(404).end();
+
+        }).then(function (user) {
+            if (user) {
+                var response = {
+                    "role": user.dataValues.role,
+                    "userName": user.dataValues.name,
+                    "emailId": user.dataValues.emailId
+                };
+                res.json(response);
+            } else {
+                res.status(404).json({error: 'no user found'});
+            }
+        }).catch(function (error) {
+            res.status(500).json({error: error});
         });
     },
     register: function (req, res) {
@@ -37,11 +43,20 @@ module.exports = {
             address: req.body.address,
             phoneNumber: req.body.phoneNumber,
             emailId: req.body.emailId
-        }).then(function(users){
-            res.json(users.dataValues);
-        }).catch(function(error){
-            console.log("ops: " + error);
-            res.status(500).json({ error: 'error' });
+        }).then(function (user) {
+            var response = {
+                "role": user.dataValues.role,
+                "userName": user.dataValues.name,
+                "emailId": user.dataValues.emailId
+            };
+
+            res.json(response);
+        }).catch(function (error) {
+            if(error.name == "SequelizeUniqueConstraintError"){
+                res.status(409).json({error: error.message});
+            } else {
+                res.status(500).json({error: error.errors});
+            }
         });
         // var requestPrams = req.body;
         // fs.readFile(FILEPATH, 'utf8', function (err, data) {

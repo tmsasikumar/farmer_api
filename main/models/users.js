@@ -16,16 +16,20 @@ module.exports = function(sequelize, DataTypes) {
         emailId: {
             type: DataTypes.STRING,
             allowNull: false,
-            primaryKey: true
+            unique: {
+                msg: 'Email already exist.'
+            }
         },
         phoneNumber: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: {
+                msg: 'Phone number already exist.'
+            }
         },
         address: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        timestamps: true
+        }
     });
 };
