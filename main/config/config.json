@@ -1,6 +1,7 @@
 {
   "development": {
-    "username": "save_farmer",
+    "driver": "pg",
+    "user": "save_farmer",
     "password": "",
     "database": "save_farmer",
     "host": "127.0.0.1",

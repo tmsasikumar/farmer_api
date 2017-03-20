@@ -7,11 +7,6 @@ var farmers = require("./farmers.js");
 var faq = require("./faq.js");
 var paymentStatus = require("./paymentStatus.js");
 
-
-var models = require("../../models"); //place on top of the file
-
-
-
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -59,16 +54,11 @@ app.get('/api/getPhoto', function(request, responce){
     responce.sendFile(__dirname + "/images/" + requestParams.urlName + ".jpg");
 });
 
+var server = app.listen(8081,  function () {
 
+    var host = server.address().address;
+    var port = server.address().port;
 
-models.sequelize.sync().then(function() {
+    console.log("app listening at http://%s:%s", host, port)
 
-    var server = app.listen(8081,  function () {
-
-        var host = server.address().address;
-        var port = server.address().port;
-
-        console.log("Example app listening at http://%s:%s", host, port)
-
-    });
 });

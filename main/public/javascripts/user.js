@@ -30,7 +30,7 @@ module.exports = {
         });
     },
     register: function (req, res) {
-        models.Users.create({
+        models.users.create({
             name: req.body.name,
             role: req.body.role,
             password: req.body.password,
